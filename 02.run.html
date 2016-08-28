@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>run</title>
+</head>
+<body>
+<script src="js/request.js"></script>
+<script src="js/run.js"></script>
+<script>
+function *main() {
+  const r1 = yield request('data/sample1.txt');
+  const r2 = yield request('data/sample2.txt');
+
+  alert(r1);
+  alert(r2);
+}
+
+run(main);
+</script>
+</body>
+</html>

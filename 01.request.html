@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>request</title>
+</head>
+<body>
+<script src="js/request.js"></script>
+<script>
+request('data/sample1.txt').then(function(value) {
+  alert(value);
+  return request('data/sample2.txt');
+}).then(function(value) {
+  alert(value);
+  return request('data/sample3.txt');
+}).catch(function(value) {
+  alert(value);
+});
+</script>
+</body>
+</html>
