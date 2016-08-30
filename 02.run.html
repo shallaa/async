@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>run</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<div id="result"></div>
 <script src="js/request.js"></script>
 <script src="js/run.js"></script>
 <script>
+const result = document.getElementById('result');
+
 function *main() {
   const r1 = yield request('data/sample1.txt');
   const r2 = yield request('data/sample2.txt');
 
-  alert(r1);
-  alert(r2);
+  result.innerHTML += `<p>${r1}</p>`;
+  result.innerHTML += `<p>${r2}</p>`;
 }
 
 run(main);

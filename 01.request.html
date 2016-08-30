@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>request</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<div id="result"></div>
 <script src="js/request.js"></script>
 <script>
+const result = document.getElementById('result');
+
 request('data/sample1.txt').then(function(value) {
-  alert(value);
+  result.innerHTML += `<p>${value}</p>`;
+
   return request('data/sample2.txt');
 }).then(function(value) {
-  alert(value);
+  result.innerHTML += `<p>${value}</p>`;
+
   return request('data/sample3.txt');
 }).catch(function(value) {
-  alert(value);
+  result.innerHTML += `<p>${value}</p>`;
 });
 </script>
 </body>
