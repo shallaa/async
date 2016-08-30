@@ -8,20 +8,6 @@
 <body>
 <div id="result"></div>
 <script src="js/request.js"></script>
-<script>
-const result = document.getElementById('result');
-
-request('data/sample1.txt').then(function(value) {
-  result.innerHTML += `<p>${value}</p>`;
-
-  return request('data/sample2.txt');
-}).then(function(value) {
-  result.innerHTML += `<p>${value}</p>`;
-
-  return request('data/sample3.txt');
-}).catch(function(value) {
-  result.innerHTML += `<p>${value}</p>`;
-});
-</script>
+<script src="js/01.request.js"></script>
 </body>
 </html>
